@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>The {{ pokemons.length }} first Pokemons</h2>
+  <hr />
+  <div class="columns">
+    <div class="column"><p>In Pokedex order</p></div>
+  </div>
+  <div class="columns is-multiline">
+    <ul class="menu-list column is-one-third" *ngFor="let pokemon of pokemons">
+      <li>
+        <a>{{ pokemon.name }}</a>
+        <ul class="menu-list">
+          <li>Category: {{ pokemon.category }}</li>
+          <li>Types: {{ pokemon.type }}</li>
+          <li>Height: {{ pokemon.height | number : "1.0-2" }}</li>
+          <li>Weight: {{ pokemon.weight | number : "1.0-2" }}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
